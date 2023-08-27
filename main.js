@@ -256,15 +256,53 @@ class SinglyLinkedList {
     this.length++;
     return true;
   }
+
+  // Remove
+  remove(index) {
+    if (index < 0 || index >= this.length) return null;
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+    let prevRemoveNode = this.get(index - 1);
+    let removedNode = prevRemoveNode.next;
+    prevRemoveNode.next = removedNode.next;
+    this.length--;
+    return removedNode;
+  }
+
+  // Reverse
+  reverse() {
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+    let nextNode;
+    let prevNode = null;
+    for (let i = 0; i < this.length; i++) {
+      nextNode = node.next;
+      node.next = prevNode;
+      prevNode = node;
+      node = nextNode;
+    }
+    return this;
+  }
+
+  print() {
+    let arr = [];
+    let current = this.head;
+    while (current) {
+      arr.push(current.val);
+      current = current.next;
+    }
+    console.log(arr);
+  }
 }
 
 const list = new SinglyLinkedList();
 
 // push
-list.push("Hello");
-list.push("EveryOne");
-list.push("Have");
-list.push("a good-day");
+// list.push("Hello");
+// list.push("EveryOne");
+// list.push("Have");
+// list.push("a good-day");
 // pop
 // list.pop();
 // list.pop();
@@ -282,22 +320,38 @@ list.push("a good-day");
 // console.log(list);
 
 // // Unshift
-list.unshift("hlw");
-list.unshift(":)");
+// list.unshift("hlw");
+// list.unshift(":)");
 
 // GET()
-console.log(list.length);
-console.log(list);
-console.log(list.get(4));
+// console.log(list.length);
+// console.log(list);
+// console.log(list.get(4));
 
 // SET()
-console.log(list.set(4, "HELLO :P"));
-console.log(list.get(4));
+// console.log(list.set(4, "HELLO :P"));
+// console.log(list.get(4));
 
 //INSERT();
-list.insert(6, "LAST ONE");
-console.log(list);
-console.log(list.get(0));
+// list.insert(6, "LAST ONE");
+// console.log(list);
+// console.log(list.get(0));
+
+// REMOVE()
+// list.remove();
+// list.remove(2);
+// console.log(list);
+
+list.push(100);
+list.push(200);
+list.push(300);
+list.push(400);
+list.push(500);
+// REVERSE()
+list.print();
+list.reverse();
+list.print();
+
 // The wrong way of assigning the value for the next node ↓
 
 // const trial = new Node("hello");
