@@ -61,4 +61,6 @@ INSERTION -- O(1)
 REMOVAL -- O(1)
 Searching -- O(N)
 ACCESS -- O(N)
+
+Works on the basis on FIFO(First In First Out)
  */
