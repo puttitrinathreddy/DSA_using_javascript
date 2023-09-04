@@ -6,6 +6,77 @@
     <title>Document</title>
   </head>
   <body>
+    Sure, let's say you have a linked list with the following initial values: 1
+    -> 2 -> 3 -> 4 -> 5
+    <br />
+    Initially:<br />
+    - `this.head` points to the node with value 1.<br />
+    - `this.tail` points to the node with value 5.<br />
+    - `this.length` is 5.<br />
+    <br />
+    Now, let's go through the `reverse()` function step by step:<br />
+    <br />
+    1. Swapping `head` and `tail` pointers:<br />
+    - `this.head` becomes the node with value 5.<br />
+    - `this.tail` becomes the node with value 1.<br />
+    <br />
+    2. Loop iteration 1:<br />
+    - `i = 0`<br />
+    - Inside the loop:<br />
+    - `node` is the node with value 5.<br />
+    - `nextNode` is the node with value 4 (the next node in the original
+    list).<br />
+    - `prevNode` is `null` (initially).<br />
+    - The `next` pointer of the node with value 5 is set to `null`.<br />
+    <br />
+    3. Loop iteration 2:<br />
+    - `i = 1`<br />
+    - Inside the loop:<br />
+    - `node` is the node with value 4.<br />
+    - `nextNode` is the node with value 3 (the next node in the original
+    list).<br />
+    - `prevNode` is the node with value 5.<br />
+    - The `next` pointer of the node with value 4 is set to the node with value
+    5.<br />
+    <br />
+    4. Loop iteration 3:<br />
+    - `i = 2`<br />
+    - Inside the loop:<br />
+    - `node` is the node with value 3.<br />
+    - `nextNode` is the node with value 2 (the next node in the original
+    list).<br />
+    - `prevNode` is the node with value 4.<br />
+    - The `next` pointer of the node with value 3 is set to the node with value
+    4.<br />
+    <br />
+    5. Loop iteration 4:<br />
+    - `i = 3`<br />
+    - Inside the loop:<br />
+    - `node` is the node with value 2.<br />
+    - `nextNode` is the node with value 1 (the next node in the original
+    list).<br />
+    - `prevNode` is the node with value 3.<br />
+    - The `next` pointer of the node with value 2 is set to the node with value
+    3.<br />
+    <br />
+    6. Loop iteration 5:<br />
+    - `i = 4`<br />
+    - Inside the loop:<br />
+    - `node` is the node with value 1.<br />
+    - `nextNode` is `null` (the next node in the original list).<br />
+    - `prevNode` is the node with value 2.<br />
+    - The `next` pointer of the node with value 1 is set to the node with value
+    2.<br />
+    <br />
+    After the loop is done, the linked list is reversed: 5 -> 4 -> 3 -> 2 ->
+    1<br />
+    <br />
+    - `this.head` points to the node with value 5.<br />
+    - `this.tail` points to the node with value 1.<br />
+    - `this.length` is still 5 (unchanged).<br />
+    <br />
+    This completes the reversal of the linked list using the provided
+    `reverse()` function.<br />
     <script src="main.js"></script>
   </body>
 </html>
